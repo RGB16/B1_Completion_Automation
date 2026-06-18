@@ -1,0 +1,26 @@
+{
+  "name": "tapestry-automation",
+  "version": "1.0.0",
+  "description": "Tapestry Service Order Automation Tool",
+  "main": "tapestry-automation-server.js",
+  "scripts": {
+    "start": "node tapestry-automation-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "automation",
+    "tapestry",
+    "playwright"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "playwright": "^1.40.0"
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  },
+  "type": "commonjs"
+}
