@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.static(__dirname));
@@ -59,8 +59,8 @@ app.post('/run-automation', async (req, res) => {
     try {
         sendLog('Launching browser...');
         browser = await chromium.launch({
-            headless: false,
-            slowMo: 500
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
         });
 
         const context = await browser.newContext({
