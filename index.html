@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Automation Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Web Automation Dashboard</h1>
+            <p class="subtitle">Automate B1 processing with real-time status tracking</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Input Form Section -->
+            <section class="input-section">
+                <h2>Configuration</h2>
+                <form id="automationForm">
+                    <!-- Credentials -->
+                    <div class="form-group">
+                        <label for="userId">
+                            <span class="label-icon">👤</span>
+                            User ID
+                        </label>
+                        <input 
+                            type="text" 
+                            id="userId" 
+                            name="userId" 
+                            placeholder="Enter your user ID" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">
+                            <span class="label-icon">🔒</span>
+                            Password
+                        </label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Enter your password" 
+                            required
+                        >
+                    </div>
+
+                    <!-- B1 Numbers Section -->
+                    <div class="form-group">
+                        <label>
+                            <span class="label-icon">📋</span>
+                            B1 Numbers (1-8)
+                        </label>
+                        <div class="b1-count-selector">
+                            <label for="b1Count">Number of B1s:</label>
+                            <select id="b1Count" name="b1Count">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="b1InputsContainer" class="b1-inputs-container">
+                        <!-- B1 inputs will be dynamically generated here -->
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="startBtn" class="btn btn-primary">
+                            <span class="btn-icon">▶️</span>
+                            Start Automation
+                        </button>
+                        <button type="button" id="stopBtn" class="btn btn-danger" disabled>
+                            <span class="btn-icon">⏹️</span>
+                            Stop Automation
+                        </button>
+                        <button type="reset" id="resetBtn" class="btn btn-secondary">
+                            <span class="btn-icon">🔄</span>
+                            Reset Form
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Status Section -->
+            <section class="status-section">
+                <h2>Automation Status</h2>
+                <div id="overallStatus" class="overall-status">
+                    <div class="status-card">
+                        <span class="status-label">Status:</span>
+                        <span id="statusText" class="status-value idle">Idle</span>
+                    </div>
+                    <div class="status-card">
+                        <span class="status-label">Progress:</span>
+                        <span id="progressText" class="status-value">0/0</span>
+                    </div>
+                    <div class="status-card">
+                        <span class="status-label">Success:</span>
+                        <span id="successCount" class="status-value success">0</span>
+                    </div>
+                    <div class="status-card">
+                        <span class="status-label">Failed:</span>
+                        <span id="failedCount" class="status-value failed">0</span>
+                    </div>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div id="progressBar" class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <span id="progressPercent" class="progress-percent">0%</span>
+                </div>
+
+                <!-- B1 Status Cards -->
+                <div id="b1StatusContainer" class="b1-status-container">
+                    <!-- B1 status cards will be dynamically generated here -->
+                </div>
+
+                <!-- Log Section -->
+                <div class="log-section">
+                    <div class="log-header">
+                        <h3>Activity Log</h3>
+                        <button id="clearLogBtn" class="btn btn-small">Clear Log</button>
+                    </div>
+                    <div id="logContainer" class="log-container">
+                        <p class="log-entry info">
+                            <span class="log-time">[--:--:--]</span>
+                            <span class="log-message">Waiting to start automation...</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Web Automation Dashboard v1.0 | Built with ❤️</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
