@@ -1,0 +1,40 @@
+# Node modules
+node_modules
+npm-debug.log
+
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+GITHUB_DEPLOYMENT.md
+*.md
+
+# Screenshots
+screenshots
+*.png
+
+# Environment files
+.env
+.env.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+
+# Test files
+test-results
+playwright-report
+.playwright
